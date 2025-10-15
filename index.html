@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Assignment Submission Portal</h1>
+  </header>
+
+  <main>
+    <!-- Login Section -->
+    <section class="login-section">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Email:</label>
+        <input type="email" id="email" required />
+
+        <label>Password:</label>
+        <input type="password" id="password" required />
+
+        <label>Login As:</label>
+        <select id="role" required>
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+        </select>
+
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Student Dashboard -->
+    <section id="studentDashboard" class="hidden dashboard">
+      <h2>Student Dashboard</h2>
+      <p>Welcome, <span id="studentName"></span></p>
+
+      <form id="uploadForm">
+        <label>Subject:</label>
+        <select id="subjectSelect" required>
+          <option value="AI">Artificial Intelligence</option>
+          <option value="OOAD">Object Oriented Analysis & Design</option>
+          <option value="FSD">Full Stack Development</option>
+          <option value="CN">Computer Networks</option>
+        </select>
+
+        <label>Upload Assignment:</label>
+        <input type="file" id="assignmentFile" required />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <h3>Your Submissions</h3>
+      <table id="studentTable">
+        <thead>
+          <tr><th>Subject</th><th>File</th><th>Status</th><th>Marks</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Faculty Dashboard -->
+    <section id="facultyDashboard" class="hidden dashboard">
+      <h2>Faculty Dashboard</h2>
+      <p>Welcome, <span id="facultyName"></span></p>
+
+      <label>Filter by Subject:</label>
+      <select id="facultyFilter">
+        <option value="all">All</option>
+        <option value="AI">Artificial Intelligence</option>
+        <option value="OOAD">Object Oriented Analysis & Design</option>
+        <option value="FSD">Full Stack Development</option>
+        <option value="CN">Computer Networks</option>
+      </select>
+
+      <h3>Submitted Assignments</h3>
+      <table id="facultyTable">
+        <thead>
+          <tr><th>Student</th><th>Subject</th><th>File</th><th>Marks</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
